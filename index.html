@@ -8,9 +8,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0a0a0a;
-    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #fff;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -18,156 +18,299 @@ body {
 
 /* HEADER */
 .header {
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-    padding: 20px 0;
-    border-bottom: 3px solid #FFD700;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    padding: 20px 0;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 15px;
+    text-decoration: none;
 }
 
 .logo-box {
     background: #FFD700;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 5px;
     font-weight: 900;
     font-size: 24px;
     color: #000;
 }
 
 .logo-text {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 900;
-    letter-spacing: 2px;
+    color: #1a1a1a;
 }
 
 .logo-text span { color: #FFD700; }
 
-.whatsapp-btn {
-    background: #FFD700;
-    color: #000;
-    padding: 14px 28px;
-    text-decoration: none;
-    font-weight: 800;
-    border-radius: 6px;
-    transition: all 0.3s;
+.nav-menu {
     display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover { color: #FFD700; }
+
+.header-contacts {
+    display: flex;
+    gap: 20px;
     align-items: center;
-    gap: 8px;
+}
+
+.phone {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s;
 }
 
 .whatsapp-btn:hover {
-    background: #fff;
+    background: #128C7E;
     transform: translateY(-2px);
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), 
+    background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(42,42,42,0.8) 100%),
                 url('https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=1920') center/cover;
     padding: 100px 0;
-    text-align: center;
-    position: relative;
+    color: #fff;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(255, 215, 0, 0.03) 10px,
-        rgba(255, 215, 0, 0.03) 20px
-    );
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
-.hero-content { position: relative; z-index: 1; }
-
-.hero-subtitle {
-    color: #FFD700;
+.hero-badge {
+    display: inline-block;
+    background: #FFD700;
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 20px;
     font-size: 14px;
     font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
     margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: 64px;
+    font-size: 52px;
     font-weight: 900;
+    line-height: 1.2;
     margin-bottom: 20px;
-    line-height: 1.1;
-    text-transform: uppercase;
 }
 
 .hero h1 span { color: #FFD700; }
 
 .hero p {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 30px;
     color: #ccc;
-    max-width: 800px;
-    margin: 0 auto 40px;
 }
 
-/* SEARCH */
-.search-container { max-width: 700px; margin: 0 auto; }
+.hero-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-feature::before {
+    content: '✓';
+    background: #FFD700;
+    color: #000;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background: #FFD700;
+    color: #000;
+    padding: 16px 32px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 800;
+    display: inline-block;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    border: 2px solid #fff;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* SEARCH BOX */
+.search-box-wrapper {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.search-box-wrapper h3 {
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
 .search-box {
     display: flex;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+    margin-bottom: 15px;
 }
+
 .search-box input {
     flex: 1;
-    padding: 20px;
-    border: none;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px 0 0 5px;
     font-size: 16px;
     outline: none;
 }
+
+.search-box input:focus {
+    border-color: #FFD700;
+}
+
 .search-box button {
     background: #FFD700;
     border: none;
-    padding: 20px 30px;
-    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* ADVANTAGES */
+.advantages {
+    padding: 80px 0;
+    background: #f8f8f8;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 36px;
     font-weight: 900;
-}
-.search-box button:hover { background: #fff; }
-
-/* FEATURES */
-.features {
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-    padding: 60px 0;
-    border-top: 2px solid #FFD700;
-    border-bottom: 2px solid #FFD700;
+    margin-bottom: 10px;
 }
 
-.features-grid {
+.section-title h2 span { color: #FFD700; }
+
+.section-title p {
+    color: #666;
+    font-size: 18px;
+}
+
+.advantages-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
-.feature {
+.advantage-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
     text-align: center;
-    padding: 30px 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s;
 }
 
-.feature-icon {
+.advantage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.advantage-icon {
     width: 80px;
     height: 80px;
     background: #FFD700;
@@ -179,113 +322,90 @@ body {
     font-size: 36px;
 }
 
-.feature h3 {
-    font-size: 18px;
+.advantage-card h3 {
+    font-size: 20px;
     margin-bottom: 10px;
-    color: #FFD700;
+    color: #1a1a1a;
 }
 
-.feature p {
-    font-size: 14px;
-    color: #999;
-    line-height: 1.5;
+.advantage-card p {
+    color: #666;
+    line-height: 1.6;
 }
 
-/* CATEGORIES */
-.categories {
-    background: #0a0a0a;
-    padding: 60px 0;
+/* CATALOG PREVIEW */
+.catalog-preview {
+    padding: 80px 0;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-header h2 {
-    font-size: 42px;
-    font-weight: 900;
-    margin-bottom: 15px;
-}
-
-.section-header h2 span { color: #FFD700; }
-
-.category-buttons {
+.category-tabs {
     display: flex;
     justify-content: center;
     gap: 15px;
+    margin-bottom: 50px;
     flex-wrap: wrap;
 }
 
-.category-btn {
-    background: #1a1a1a;
-    color: #fff;
-    border: 2px solid #333;
-    padding: 14px 32px;
-    border-radius: 30px;
+.category-tab {
+    background: #f0f0f0;
+    padding: 12px 28px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: 700;
-    font-size: 15px;
     transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    border: 2px solid transparent;
 }
 
-.category-btn:hover,
-.category-btn.active {
+.category-tab:hover,
+.category-tab.active {
     background: #FFD700;
-    color: #000;
     border-color: #FFD700;
 }
 
-/* PRODUCTS */
-.products-section { padding: 60px 0; }
-
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .product-card {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    border: 2px solid #333;
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: all 0.3s;
 }
 
 .product-card:hover {
-    border-color: #FFD700;
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
 .product-image {
-    height: 240px;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    height: 220px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 80px;
-    border-bottom: 3px solid #FFD700;
     position: relative;
 }
 
-.product-badge {
+.product-stock {
     position: absolute;
     top: 15px;
-    right: 15px;
-    background: #FFD700;
-    color: #000;
-    padding: 6px 14px;
-    border-radius: 20px;
+    left: 15px;
+    background: #25D366;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 15px;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
-.product-info { padding: 25px; }
+.product-info {
+    padding: 25px;
+}
 
 .product-category {
     color: #FFD700;
@@ -293,153 +413,118 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .product-name {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
-    margin-bottom: 10px;
-    color: #fff;
+    margin-bottom: 8px;
+    color: #1a1a1a;
 }
 
 .product-code {
-    color: #888;
+    color: #999;
     font-size: 14px;
     margin-bottom: 15px;
 }
 
-.product-description {
-    color: #999;
-    font-size: 14px;
-    margin-bottom: 20px;
-    line-height: 1.5;
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: 900;
+    color: #FFD700;
 }
 
 .product-btn {
-    display: block;
-    background: #FFD700;
-    color: #000;
-    text-align: center;
-    padding: 14px;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
     text-decoration: none;
-    font-weight: 800;
-    border-radius: 6px;
+    font-weight: 700;
     transition: all 0.3s;
 }
 
 .product-btn:hover {
-    background: #fff;
-    transform: scale(1.05);
+    background: #FFD700;
+    color: #000;
 }
 
-/* REQUEST SECTION */
-.request-section {
+/* CTA SECTION */
+.cta-section {
     background: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
     padding: 80px 0;
     text-align: center;
-    position: relative;
-    overflow: hidden;
 }
 
-.request-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: rgba(0,0,0,0.05);
-    border-radius: 50%;
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.request-content { position: relative; z-index: 1; }
-
-.request-section h2 {
+.cta-section h2 {
     font-size: 42px;
     font-weight: 900;
     color: #000;
     margin-bottom: 20px;
 }
 
-.request-section p {
+.cta-section p {
     font-size: 18px;
     color: #333;
-    max-width: 700px;
-    margin: 0 auto 30px;
-}
-
-.request-btn {
-    display: inline-block;
-    background: #000;
-    color: #FFD700;
-    padding: 18px 45px;
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: all 0.3s;
-}
-
-.request-btn:hover {
-    background: #fff;
-    color: #000;
-    transform: scale(1.05);
+    margin-bottom: 30px;
 }
 
 /* FOOTER */
 .footer {
-    background: #000;
-    padding: 50px 0 30px;
-    border-top: 3px solid #FFD700;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 60px 0 30px;
 }
 
-.footer-content {
+.footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .footer-section h3 {
     color: #FFD700;
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .footer-section p,
 .footer-section a {
-    color: #999;
+    color: #ccc;
     text-decoration: none;
     line-height: 1.8;
 }
 
-.footer-section a:hover { color: #FFD700; }
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid #222;
-    color: #666;
-    font-size: 14px;
-}
-
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: #888;
-}
-
-.empty-state h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
+.footer-section a:hover {
     color: #FFD700;
 }
 
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 30px;
+    text-align: center;
+    color: #666;
+}
+
 @media (max-width: 768px) {
+    .hero-content { grid-template-columns: 1fr; }
     .hero h1 { font-size: 36px; }
+    .nav-menu { display: none; }
     .products-grid { grid-template-columns: 1fr; }
-    .header-content { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
@@ -447,113 +532,136 @@ body {
 
 <!-- Header -->
 <header class="header">
+    <div class="header-top">
+        <div class="container">
+            <span> Казахстан, работаем по всему СНГ</span>
+            <span>⏰ Пн-Пт: 9:00 - 18:00</span>
+        </div>
+    </div>
     <div class="container header-content">
-        <div class="logo">
+        <a href="#" class="logo">
             <div class="logo-box">EHS</div>
             <div class="logo-text"><span>EHS</span> MACHINERY</div>
-        </div>
-        <a href="https://wa.me/77750078288" class="whatsapp-btn" target="_blank">
-            📱 WhatsApp
         </a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#about">О компании</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="header-contacts">
+            <a href="tel:+77750078288" class="phone">+7 (775) 007-82-88</a>
+            <a href="https://wa.me/77750078288" class="whatsapp-btn" target="_blank">WhatsApp</a>
+        </div>
     </div>
 </header>
 
 <!-- Hero -->
 <section class="hero">
     <div class="container hero-content">
-        <div class="hero-subtitle">ГОРНО-ШАХТНОЕ ОБОРУДОВАНИЕ</div>
-        <h1>НАЙДЁМ ВСЁ,<br><span>ЧТО ВАМ НУЖНО</span></h1>
-        <p>Запчасти, оборудование и комплектующие для горной и карьерной техники. Есть артикул, модель или только фото детали — отправьте запрос, мы найдём решение.</p>
+        <div>
+            <div class="hero-badge">✓ В наличии более 12 000 позиций</div>
+            <h1>НАЙДЁМ ВСЁ, <span>ЧТО ВАМ НУЖНО</span></h1>
+            <p>Запчасти и оборудование для горно-шахтной техники. Отправляйте запросы — найдём и поставим!</p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">Поиск по артикулу или фото</div>
+                <div class="hero-feature">Прямые поставки от производителей</div>
+                <div class="hero-feature">Проверенные аналоги</div>
+                <div class="hero-feature">Быстрая доставка от 1 дня</div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn-primary">Смотреть каталог</a>
+                <a href="https://wa.me/77750078288" class="btn-secondary" target="_blank">Отправить запрос</a>
+            </div>
+        </div>
         
-        <div class="search-container">
+        <div class="search-box-wrapper">
+            <h3> Быстрый поиск запчасти</h3>
             <div class="search-box">
-                <input type="search" id="searchInput" placeholder="Введите артикул, название или модель техники...">
-                <button onclick="filterProducts()">🔍</button>
+                <input type="text" placeholder="Введите артикул или название...">
+                <button>Найти</button>
             </div>
+            <p style="color: #666; font-size: 14px;">Или отправьте фото детали в WhatsApp</p>
         </div>
     </div>
 </section>
 
-<!-- Features -->
-<section class="features">
+<!-- Advantages -->
+<section class="advantages" id="advantages">
     <div class="container">
-        <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon">🔍</div>
+        <div class="section-title">
+            <h2>ПОЧЕМУ <span>ВЫБИРАЮТ НАС</span></h2>
+            <p>Работаем с горнодобывающими предприятиями по всему Казахстану</p>
+        </div>
+        
+        <div class="advantages-grid">
+            <div class="advantage-card">
+                <div class="advantage-icon">🔍</div>
                 <h3>Поиск любой запчасти</h3>
-                <p>По артикулу, модели, производителю или фото</p>
+                <p>Найдём деталь по артикулу, фото или описанию. Работаем с любыми производителями</p>
             </div>
-            <div class="feature">
-                <div class="feature-icon">🌍</div>
+            <div class="advantage-card">
+                <div class="advantage-icon">🌍</div>
                 <h3>Прямые поставки</h3>
-                <p>От производителей по всему миру</p>
+                <p>Работаем напрямую с производителями по всему миру. Лучшие цены и сроки</p>
             </div>
-            <div class="feature">
-                <div class="feature-icon">✓</div>
-                <h3>Проверенные аналоги</h3>
-                <p>Оригинал, аналог, альтернатива</p>
+            <div class="advantage-card">
+                <div class="advantage-icon">✓</div>
+                <h3>Гарантия качества</h3>
+                <p>Только оригинальные запчасти и проверенные аналоги. Гарантия на всю продукцию</p>
             </div>
-            <div class="feature">
-                <div class="feature-icon">🚚</div>
+            <div class="advantage-card">
+                <div class="advantage-icon"></div>
                 <h3>Быстрая доставка</h3>
-                <p>От 1 дня в зависимости от позиции</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🎧</div>
-                <h3>Поддержка 24/7</h3>
-                <p>От подбора до поставки</p>
+                <p>Доставка от 1 дня. Отправляем по всему Казахстану и СНГ</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Categories -->
-<section class="categories">
+<!-- Catalog Preview -->
+<section class="catalog-preview" id="catalog">
     <div class="container">
-        <div class="section-header">
-            <h2>КАТАЛОГ <span>ОБОРУДОВАНИЯ</span></h2>
+        <div class="section-title">
+            <h2>ПОПУЛЯРНЫЕ <span>КАТЕГОРИИ</span></h2>
+            <p>Более 12 000 позиций в наличии и на заказ</p>
         </div>
-        <div class="category-buttons">
-            <button class="category-btn active" data-category="all">⚙️ Все товары</button>
-            <button class="category-btn" data-category="hydraulic">🔧 Гидравлика</button>
-            <button class="category-btn" data-category="filters">🔵 Фильтры</button>
-            <button class="category-btn" data-category="electrical">⚡ Электрика</button>
-            <button class="category-btn" data-category="undercarriage">🛞 Ходовая</button>
-            <button class="category-btn" data-category="engine">🔩 Двигатель</button>
+        
+        <div class="category-tabs">
+            <div class="category-tab active">Все</div>
+            <div class="category-tab">Гидравлика</div>
+            <div class="category-tab">Фильтры</div>
+            <div class="category-tab">Электрика</div>
+            <div class="category-tab">Ходовая</div>
+            <div class="category-tab">Двигатель</div>
         </div>
-    </div>
-</section>
-
-<!-- Products -->
-<section class="products-section">
-    <div class="container">
+        
         <div class="products-grid" id="productsGrid"></div>
-        <div class="empty-state" id="emptyState" style="display: none;">
-            <h3>Не нашли нужную позицию?</h3>
-            <p>Это не значит, что мы не сможем её найти!</p>
-        </div>
     </div>
 </section>
 
-<!-- Request -->
-<section class="request-section">
-    <div class="container request-content">
-        <h2>НЕ НАШЛИ В КАТАЛОГЕ?</h2>
-        <p>Отправьте запрос — мы попробуем найти и поставить. Просто отправьте фото, артикул или список запчастей.</p>
-        <a href="https://wa.me/77750078288?text=Здравствуйте!%20Мне%20нужно%20найти%20запчасть.%20Помогите,%20пожалуйста." class="request-btn" target="_blank">
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container cta-content">
+        <h2>НЕ НАШЛИ НУЖНУЮ ЗАПЧАСТЬ?</h2>
+        <p>Отправьте нам фото, артикул или список деталей — мы найдём и подготовим индивидуальное предложение!</p>
+        <a href="https://wa.me/77750078288?text=Здравствуйте!%20Мне%20нужно%20найти%20запчасть." class="btn-primary" target="_blank">
             🟡 ОТПРАВИТЬ ЗАПРОС
         </a>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer" id="contacts">
     <div class="container">
-        <div class="footer-content">
+        <div class="footer-grid">
             <div class="footer-section">
                 <h3>EHS MACHINERY</h3>
-                <p>Горно-шахтное оборудование и запчасти</p>
-                <p>Надёжный поставщик для горнодобывающей и горно-обогатительной отрасли</p>
+                <p>Надёжный поставщик запчастей и оборудования для горнодобывающей и горно-обогатительной отрасли</p>
             </div>
             <div class="footer-section">
                 <h3>Контакты</h3>
@@ -563,9 +671,9 @@ body {
             </div>
             <div class="footer-section">
                 <h3>Режим работы</h3>
-                <p>Пн-Пт: 9:00 - 18:00</p>
-                <p>Сб: 10:00 - 14:00</p>
-                <p>Вс: выходной</p>
+                <p>Понедельник - Пятница: 9:00 - 18:00</p>
+                <p>Суббота: 10:00 - 14:00</p>
+                <p>Воскресенье: выходной</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -576,87 +684,43 @@ body {
 
 <script>
 const products = [
-    { id: 1, name: "Гидравлический насос HPM-4500", code: "EHS-HPM4500-2024", category: "hydraulic", icon: "⚙️", description: "Высокопроизводительный гидронасос для карьерной техники", stock: "В наличии: 12 шт.", price: "2 450 ₸" },
-    { id: 2, name: "Фильтрующий элемент FTX-880", code: "EHS-FTX880-2024", category: "filters", icon: "🔵", description: "Масляный фильтр для гидравлических систем", stock: "В наличии: 37 шт.", price: "1 240 ₸" },
-    { id: 3, name: "Клеммная колодка EB-24L", code: "EHS-EB24L-2024", category: "electrical", icon: "⚡", description: "Электрический клеммный блок для спецтехники", stock: "В наличии: 156 шт.", price: "890 ₸" },
-    { id: 4, name: "Поддерживающий каток IW-7600", code: "EHS-IW7600-2024", category: "undercarriage", icon: "🛞", description: "Каток ходовой части для экскаваторов", stock: "В наличии: 8 шт.", price: "15 600 ₸" },
-    { id: 5, name: "Ведущая звёздочка DS-520", code: "EHS-DS520-2024", category: "undercarriage", icon: "⭐", description: "Звёздочка привода гусеничной ленты", stock: "В наличии: 5 шт.", price: "18 900 ₸" },
-    { id: 6, name: "Гидромотор HM-3300", code: "EHS-HM3300-2024", category: "hydraulic", icon: "⚙️", description: "Гидравлический мотор для приводов", stock: "В наличии: 3 шт.", price: "45 000 ₸" },
-    { id: 7, name: "Воздушный фильтр AF-1200", code: "EHS-AF1200-2024", category: "filters", icon: "⚪", description: "Фильтр воздушный для дизельных двигателей", stock: "В наличии: 89 шт.", price: "3 200 ₸" },
-    { id: 8, name: "Стартер ST-5500", code: "EHS-ST5500-2024", category: "electrical", icon: "🔋", description: "Стартер для карьерных самосвалов", stock: "В наличии: 6 шт.", price: "28 500 " },
-    { id: 9, name: "Турбокомпрессор TC-8800", code: "EHS-TC8800-2024", category: "engine", icon: "🔩", description: "Турбина для двигателей спецтехники", stock: "В наличии: 2 шт.", price: "125 000 ₸" },
-    { id: 10, name: "Гидроцилиндр HC-2200", code: "EHS-HC2200-2024", category: "hydraulic", icon: "⚙️", description: "Гидроцилиндр подъёма кузова", stock: "В наличии: 4 шт.", price: "67 800 ₸" },
-    { id: 11, name: "Топливный фильтр FF-440", code: "EHS-FF440-2024", category: "filters", icon: "🔵", description: "Фильтр топливный тонкой очистки", stock: "В наличии: 45 шт.", price: "2 100 ₸" },
-    { id: 12, name: "Генератор GN-3300", code: "EHS-GN3300-2024", category: "electrical", icon: "⚡", description: "Генератор для горной техники", stock: "В наличии: 7 шт.", price: "34 500 ₸" }
+    { id: 1, name: "Гидравлический насос HPM-4500", code: "EHS-HPM4500-2024", category: "Гидравлика", icon: "⚙️", stock: "В наличии: 12 шт.", price: "2 450 " },
+    { id: 2, name: "Фильтрующий элемент FTX-880", code: "EHS-FTX880-2024", category: "Фильтры", icon: "🔵", stock: "В наличии: 37 шт.", price: "1 240 ₸" },
+    { id: 3, name: "Клеммная колодка EB-24L", code: "EHS-EB24L-2024", category: "Электрика", icon: "⚡", stock: "В наличии: 156 шт.", price: "890 " },
+    { id: 4, name: "Поддерживающий каток IW-7600", code: "EHS-IW7600-2024", category: "Ходовая", icon: "", stock: "В наличии: 8 шт.", price: "15 600 ₸" },
+    { id: 5, name: "Гидромотор HM-3300", code: "EHS-HM3300-2024", category: "Гидравлика", icon: "️", stock: "В наличии: 3 шт.", price: "45 000 " },
+    { id: 6, name: "Воздушный фильтр AF-1200", code: "EHS-AF1200-2024", category: "Фильтры", icon: "⚪", stock: "В наличии: 89 шт.", price: "3 200 ₸" }
 ];
 
-let currentCategory = 'all';
-
 function renderProducts() {
-    const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
     const grid = document.getElementById('productsGrid');
-    const emptyState = document.getElementById('emptyState');
-    
-    const filtered = products.filter(product => {
-        const categoryMatch = currentCategory === 'all' || product.category === currentCategory;
-        const searchMatch = !searchQuery || 
-            product.name.toLowerCase().includes(searchQuery) ||
-            product.code.toLowerCase().includes(searchQuery) ||
-            product.description.toLowerCase().includes(searchQuery);
-        return categoryMatch && searchMatch;
-    });
-    
-    if (filtered.length === 0) {
-        grid.style.display = 'none';
-        emptyState.style.display = 'block';
-    } else {
-        grid.style.display = 'grid';
-        emptyState.style.display = 'none';
-        grid.innerHTML = filtered.map(product => `
-            <div class="product-card">
-                <div class="product-image">
-                    ${product.icon}
-                    <div class="product-badge">${product.stock}</div>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">${getCategoryName(product.category)}</div>
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-code">Артикул: ${product.code}</div>
-                    <div class="product-description">${product.description}</div>
-                    <div style="color: #FFD700; font-weight: 800; font-size: 18px; margin-bottom: 15px;">${product.price}</div>
-                    <a href="https://wa.me/77750078288?text=${encodeURIComponent('Здравствуйте! Интересует: ' + product.name + ', ' + product.code)}" 
-                       class="product-btn" target="_blank">
-                        💬 ЗАПРОСИТЬ ЦЕНУ
-                    </a>
+    grid.innerHTML = products.map(product => `
+        <div class="product-card">
+            <div class="product-image">
+                ${product.icon}
+                <div class="product-stock">${product.stock}</div>
+            </div>
+            <div class="product-info">
+                <div class="product-category">${product.category}</div>
+                <div class="product-name">${product.name}</div>
+                <div class="product-code">Артикул: ${product.code}</div>
+                <div class="product-footer">
+                    <div class="product-price">${product.price}</div>
+                    <a href="https://wa.me/77750078288?text=${encodeURIComponent('Здравствуйте! Интересует: ' + product.name)}" 
+                       class="product-btn" target="_blank">Заказать</a>
                 </div>
             </div>
-        `).join('');
-    }
+        </div>
+    `).join('');
 }
 
-function getCategoryName(category) {
-    const names = { 
-        'hydraulic': 'ГИДРАВЛИКА', 
-        'filters': 'ФИЛЬТРЫ', 
-        'electrical': 'ЭЛЕКТРИКА', 
-        'undercarriage': 'ХОДОВАЯ ЧАСТЬ', 
-        'engine': 'ДВИГАТЕЛЬ' 
-    };
-    return names[category] || category.toUpperCase();
-}
-
-function filterProducts() { renderProducts(); }
-
-document.querySelectorAll('.category-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+document.querySelectorAll('.category-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
         this.classList.add('active');
-        currentCategory = this.dataset.category;
-        renderProducts();
     });
 });
 
-document.getElementById('searchInput').addEventListener('input', renderProducts);
 renderProducts();
 </script>
 
