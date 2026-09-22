@@ -1,96 +1,605 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EHS Mashinery — каталог</title>
-    <meta name="description" content="EHS Mashinery — поиск и поставка горно-шахтного оборудования, запчастей и комплектующих.">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EHS MACHINERY — Каталог горно-шахтного оборудования</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: #000;
+    padding: 20px 0;
+    border-bottom: 3px solid #FFD700;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    background: #FFD700;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 24px;
+    color: #000;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo-text span {
+    color: #FFD700;
+}
+
+.whatsapp-btn {
+    background: #FFD700;
+    color: #000;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #FFD700;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Search Box */
+.search-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box button {
+    background: #FFD700;
+    border: none;
+    padding: 20px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: #fff;
+}
+
+/* Categories */
+.categories {
+    background: #1a1a1a;
+    padding: 40px 0;
+    border-top: 2px solid #FFD700;
+    border-bottom: 2px solid #FFD700;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    background: #000;
+    color: #fff;
+    border: 2px solid #FFD700;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: #FFD700;
+    color: #000;
+}
+
+/* Products Section */
+.products-section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #FFD700;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    border-color: #FFD700;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.product-image {
+    height: 220px;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    border-bottom: 3px solid #FFD700;
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-category {
+    color: #FFD700;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.product-code {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.product-btn {
+    display: block;
+    background: #FFD700;
+    color: #000;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.product-btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+/* Request Section */
+.request-section {
+    background: #FFD700;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.request-section h2 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.request-section p {
+    font-size: 18px;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.request-btn {
+    display: inline-block;
+    background: #000;
+    color: #FFD700;
+    padding: 18px 40px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.request-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 3px solid #FFD700;
+}
+
+.footer p {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+
+.empty-state h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+</style>
 </head>
 <body>
-    <header class="header">
-        <div class="container nav">
-            <div class="logo"><span>EHS</span> MASHINERY</div>
-            <a class="whatsapp mini" href="https://wa.me/77750078288" target="_blank">WhatsApp</a>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-content">
+        <div class="logo">
+            <div class="logo-icon">EHS</div>
+            <div class="logo-text"><span>EHS</span> MACHINERY</div>
         </div>
-    </header>
+        <a href="https://wa.me/77750078288" class="whatsapp-btn" target="_blank">📱 WhatsApp</a>
+    </div>
+</header>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <div class="eyebrow">ГОРНО-ШАХТНОЕ ОБОРУДОВАНИЕ</div>
-                    <h1>НАЙДЁМ ВСЁ,<br><span>ЧТО ВАМ НУЖНО</span></h1>
-                    <p>Запчасти, оборудование и комплектующие для горной и карьерной техники. Есть артикул, модель или только фото детали — отправьте запрос, мы попробуем найти нужное решение.</p>
-                    <div class="hero-actions">
-                        <a class="btn yellow" href="#catalog">Смотреть каталог</a>
-                        <a class="btn outline" href="https://wa.me/77750078288?text=Здравствуйте!%20Хочу%20подобрать%20запчасть." target="_blank">Отправить запрос</a>
-                    </div>
-                </div>
-                <div class="hero-card">
-                    <div class="search-label">ПОИСК ЗАПЧАСТИ</div>
-                    <div class="search-box">
-                        <input id="search" type="search" placeholder="Артикул, название, модель...">
-                        <button onclick="filterProducts()">⌕</button>
-                    </div>
-                    <div class="quick">Например: гидронасос · фильтр · CAT 777</div>
-                </div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>НАЙДЁМ ВСЁ,<br><span>ЧТО ВАМ НУЖНО</span></h1>
+        <p>Запчасти, оборудование и комплектующие для горной и карьерной техники. Есть артикул, модель или только фото детали — отправьте запрос, мы найдём решение.</p>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <input type="search" id="searchInput" placeholder="Введите артикул, название или модель техники...">
+                <button onclick="filterProducts()"></button>
             </div>
-        </section>
-
-        <section class="promise">
-            <div class="container promise-grid">
-                <div><strong>01</strong><h3>Есть артикул?</h3><p>Пришлите его нам.</p></div>
-                <div><strong>02</strong><h3>Есть фото?</h3><p>Отправьте фотографию детали.</p></div>
-                <div><strong>03</strong><h3>Не знаете название?</h3><p>Опишите технику и задачу.</p></div>
-                <div><strong>04</strong><h3>Не нашли в каталоге?</h3><p>Мы всё равно попробуем найти.</p></div>
-            </div>
-        </section>
-
-        <section id="catalog" class="catalog-section">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <div class="eyebrow dark">КАТАЛОГ</div>
-                        <h2>Популярные категории</h2>
-                    </div>
-                    <div class="categories">
-                        <button class="cat active" data-cat="all">Все</button>
-                        <button class="cat" data-cat="Гидравлика">Гидравлика</button>
-                        <button class="cat" data-cat="Фильтры">Фильтры</button>
-                        <button class="cat" data-cat="Электрика">Электрика</button>
-                        <button class="cat" data-cat="Ходовая">Ходовая</button>
-                    </div>
-                </div>
-
-                <div id="products" class="products"></div>
-                <div id="empty" class="empty" hidden>
-                    <h3>Не нашли нужную позицию?</h3>
-                    <p>Это не значит, что мы не сможем её найти.</p>
-                    <a class="btn yellow" href="https://wa.me/77750078288?text=Здравствуйте!%20Не%20нашёл%20нужную%20позицию%20в%20каталоге.%20Помогите%20найти." target="_blank">Отправить запрос в WhatsApp</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="request">
-            <div class="container request-box">
-                <div>
-                    <div class="eyebrow">НЕ НАШЛИ?</div>
-                    <h2>Отправьте нам запрос</h2>
-                    <p>Фото детали, артикул, модель техники или даже ваш список закупки — мы проверим возможные варианты поставки.</p>
-                </div>
-                <a class="btn black" href="https://wa.me/77750078288?text=Здравствуйте!%20Мне%20нужно%20найти%20запчасть.%20Подскажите,%20пожалуйста." target="_blank">🟡 Запросить запчасть</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-inner">
-            <div><div class="logo"><span>EHS</span> MASHINERY</div><p>Горно-шахтное оборудование и запчасти</p></div>
-            <div><strong>WhatsApp</strong><br><a href="https://wa.me/77750078288" target="_blank">+7 (775) 007-82-88</a></div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- Categories -->
+<section class="categories">
+    <div class="container">
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="all">Все товары</button>
+            <button class="category-btn" data-category="hydraulic">Гидравлика</button>
+            <button class="category-btn" data-category="filters">Фильтры</button>
+            <button class="category-btn" data-category="electrical">Электрика</button>
+            <button class="category-btn" data-category="undercarriage">Ходовая часть</button>
+            <button class="category-btn" data-category="engine">Двигатель</button>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section">
+    <div class="container">
+        <h2 class="section-title">КАТАЛОГ <span>ОБОРУДОВАНИЯ</span></h2>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here -->
+        </div>
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <h3>Не нашли нужную позицию?</h3>
+            <p>Это не значит, что мы не сможем её найти!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Request Section -->
+<section class="request-section">
+    <div class="container">
+        <h2>НЕ НАШЛИ НУЖНУЮ ЗАПЧАСТЬ?</h2>
+        <p>Отправьте нам фото детали, артикул или модель техники — мы проверим все варианты поставки и найдём лучшее решение для вас.</p>
+        <a href="https://wa.me/77750078288?text=Здравствуйте!%20Мне%20нужно%20найти%20запчасть.%20Помогите,%20пожалуйста." class="request-btn" target="_blank">🟡 ОТПРАВИТЬ ЗАПРОС</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p><strong>EHS MACHINERY</strong> — Горно-шахтное оборудование и запчасти</p>
+        <p>WhatsApp: <a href="https://wa.me/77750078288" target="_blank">+7 (775) 007-82-88</a></p>
+        <p style="margin-top: 20px; font-size: 14px;">© 2024 EHS Machinery. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+// Product database
+const products = [
+    {
+        id: 1,
+        name: "Гидравлический насос HPM-4500",
+        code: "EHS-HPM4500-2024",
+        category: "hydraulic",
+        icon: "️",
+        description: "Высокопроизводительный гидронасос для карьерной техники"
+    },
+    {
+        id: 2,
+        name: "Фильтрующий элемент FTX-880",
+        code: "EHS-FTX880-2024",
+        category: "filters",
+        icon: "🔵",
+        description: "Масляный фильтр для гидравлических систем"
+    },
+    {
+        id: 3,
+        name: "Клеммная колодка EB-24L",
+        code: "EHS-EB24L-2024",
+        category: "electrical",
+        icon: "⚡",
+        description: "Электрический клеммный блок для спецтехники"
+    },
+    {
+        id: 4,
+        name: "Поддерживающий каток IW-7600",
+        code: "EHS-IW7600-2024",
+        category: "undercarriage",
+        icon: "⚙️",
+        description: "Каток ходовой части для экскаваторов"
+    },
+    {
+        id: 5,
+        name: "Ведущая звёздочка DS-520",
+        code: "EHS-DS520-2024",
+        category: "undercarriage",
+        icon: "️",
+        description: "Звёздочка привода гусеничной ленты"
+    },
+    {
+        id: 6,
+        name: "Гидромотор HM-3300",
+        code: "EHS-HM3300-2024",
+        category: "hydraulic",
+        icon: "⚙️",
+        description: "Гидравлический мотор для приводов"
+    },
+    {
+        id: 7,
+        name: "Воздушный фильтр AF-1200",
+        code: "EHS-AF1200-2024",
+        category: "filters",
+        icon: "",
+        description: "Фильтр воздушный для дизельных двигателей"
+    },
+    {
+        id: 8,
+        name: "Стартер ST-5500",
+        code: "EHS-ST5500-2024",
+        category: "electrical",
+        icon: "",
+        description: "Стартер для карьерных самосвалов"
+    },
+    {
+        id: 9,
+        name: "Турбокомпрессор TC-8800",
+        code: "EHS-TC8800-2024",
+        category: "engine",
+        icon: "🔧",
+        description: "Турбина для двигателей спецтехники"
+    },
+    {
+        id: 10,
+        name: "Гидроцилиндр HC-2200",
+        code: "EHS-HC2200-2024",
+        category: "hydraulic",
+        icon: "⚙️",
+        description: "Гидроцилиндр подъёма кузова"
+    },
+    {
+        id: 11,
+        name: "Топливный фильтр FF-440",
+        code: "EHS-FF440-2024",
+        category: "filters",
+        icon: "🔵",
+        description: "Фильтр топливный тонкой очистки"
+    },
+    {
+        id: 12,
+        name: "Генератор GN-3300",
+        code: "EHS-GN3300-2024",
+        category: "electrical",
+        icon: "⚡",
+        description: "Генератор для горной техники"
+    }
+];
+
+let currentCategory = 'all';
+
+function renderProducts() {
+    const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+    const grid = document.getElementById('productsGrid');
+    const emptyState = document.getElementById('emptyState');
+    
+    const filtered = products.filter(product => {
+        const categoryMatch = currentCategory === 'all' || product.category === currentCategory;
+        const searchMatch = !searchQuery || 
+            product.name.toLowerCase().includes(searchQuery) ||
+            product.code.toLowerCase().includes(searchQuery) ||
+            product.description.toLowerCase().includes(searchQuery);
+        return categoryMatch && searchMatch;
+    });
+    
+    if (filtered.length === 0) {
+        grid.style.display = 'none';
+        emptyState.style.display = 'block';
+    } else {
+        grid.style.display = 'grid';
+        emptyState.style.display = 'none';
+        
+        grid.innerHTML = filtered.map(product => `
+            <div class="product-card">
+                <div class="product-image">${product.icon}</div>
+                <div class="product-info">
+                    <div class="product-category">${getCategoryName(product.category)}</div>
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-code">Артикул: ${product.code}</div>
+                    <p style="color: #888; font-size: 14px; margin-bottom: 20px;">${product.description}</p>
+                    <a href="https://wa.me/77750078288?text=${encodeURIComponent('Здравствуйте! Интересует позиция: ' + product.name + ', артикул ' + product.code)}" 
+                       class="product-btn" target="_blank">
+                        💬 ЗАПРОСИТЬ ЦЕНУ
+                    </a>
+                </div>
+            </div>
+        `).join('');
+    }
+}
+
+function getCategoryName(category) {
+    const names = {
+        'hydraulic': 'ГИДРАВЛИКА',
+        'filters': 'ФИЛЬТРЫ',
+        'electrical': 'ЭЛЕКТРИКА',
+        'undercarriage': 'ХОДОВАЯ ЧАСТЬ',
+        'engine': 'ДВИГАТЕЛЬ'
+    };
+    return names[category] || category.toUpperCase();
+}
+
+function filterProducts() {
+    renderProducts();
+}
+
+// Category buttons
+document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentCategory = this.dataset.category;
+        renderProducts();
+    });
+});
+
+// Search input
+document.getElementById('searchInput').addEventListener('input', renderProducts);
+
+// Initial render
+renderProducts();
+</script>
+
 </body>
 </html>
