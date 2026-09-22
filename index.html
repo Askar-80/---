@@ -45,17 +45,10 @@ body {
     gap: 15px;
 }
 
-.logo-icon {
-    width: 60px;
+.logo img {
     height: 60px;
-    background: #FFD700;
+    width: auto;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 24px;
-    color: #000;
 }
 
 .logo-text {
@@ -359,8 +352,7 @@ body {
 <header class="header">
     <div class="container header-content">
         <div class="logo">
-            <div class="logo-icon">EHS</div>
-            <div class="logo-text"><span>EHS</span> MACHINERY</div>
+            <img src="logo.png" alt="EHS MACHINERY">
         </div>
         <a href="https://wa.me/77750078288" class="whatsapp-btn" target="_blank">📱 WhatsApp</a>
     </div>
@@ -414,7 +406,7 @@ body {
     <div class="container">
         <h2>НЕ НАШЛИ НУЖНУЮ ЗАПЧАСТЬ?</h2>
         <p>Отправьте нам фото детали, артикул или модель техники — мы проверим все варианты поставки и найдём лучшее решение для вас.</p>
-        <a href="https://wa.me/77750078288?text=Здравствуйте!%20Мне%20нужно%20найти%20запчасть.%20Помогите,%20пожалуйста." class="request-btn" target="_blank">🟡 ОТПРАВИТЬ ЗАПРОС</a>
+        <a href="https://wa.me/77750078288?text=Здравствуйте!%20Мне%20нужно%20найти%20запчасть.%20Помогите,%20пожалуйста." class="request-btn" target="_blank"> ОТПРАВИТЬ ЗАПРОС</a>
     </div>
 </section>
 
@@ -435,7 +427,7 @@ const products = [
         name: "Гидравлический насос HPM-4500",
         code: "EHS-HPM4500-2024",
         category: "hydraulic",
-        icon: "️",
+        icon: "⚙️",
         description: "Высокопроизводительный гидронасос для карьерной техники"
     },
     {
@@ -443,7 +435,7 @@ const products = [
         name: "Фильтрующий элемент FTX-880",
         code: "EHS-FTX880-2024",
         category: "filters",
-        icon: "🔵",
+        icon: "",
         description: "Масляный фильтр для гидравлических систем"
     },
     {
@@ -467,7 +459,7 @@ const products = [
         name: "Ведущая звёздочка DS-520",
         code: "EHS-DS520-2024",
         category: "undercarriage",
-        icon: "️",
+        icon: "⭐",
         description: "Звёздочка привода гусеничной ленты"
     },
     {
@@ -475,7 +467,7 @@ const products = [
         name: "Гидромотор HM-3300",
         code: "EHS-HM3300-2024",
         category: "hydraulic",
-        icon: "⚙️",
+        icon: "️",
         description: "Гидравлический мотор для приводов"
     },
     {
@@ -483,7 +475,7 @@ const products = [
         name: "Воздушный фильтр AF-1200",
         code: "EHS-AF1200-2024",
         category: "filters",
-        icon: "",
+        icon: "️",
         description: "Фильтр воздушный для дизельных двигателей"
     },
     {
