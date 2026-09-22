@@ -6,58 +6,66 @@
 <title>EHS MACHINERY — Каталог горно-шахтного оборудования</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0a0a0a; color: #fff; line-height: 1.6; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f1419; color: #fff; line-height: 1.6; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-.header { background: #000; padding: 20px 0; border-bottom: 3px solid #FFD700; }
+/* ИЗМЕНИЛИ ЦВЕТА: жёлтый → голубой */
+.header { background: #000; padding: 20px 0; border-bottom: 3px solid #00D9FF; }
 .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
 .logo { display: flex; align-items: center; }
 .logo svg { height: 55px; width: auto; }
-.whatsapp-btn { background: #FFD700; color: #000; padding: 12px 24px; text-decoration: none; font-weight: 800; border-radius: 6px; transition: all 0.3s; }
+
+/* Кнопка WhatsApp теперь голубая */
+.whatsapp-btn { background: #00D9FF; color: #000; padding: 12px 24px; text-decoration: none; font-weight: 800; border-radius: 6px; transition: all 0.3s; }
 .whatsapp-btn:hover { background: #fff; transform: translateY(-2px); }
 
-.hero { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 80px 0; text-align: center; }
+/* Фон героя темнее */
+.hero { background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%); padding: 80px 0; text-align: center; }
 .hero h1 { font-size: 56px; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
-.hero h1 span { color: #FFD700; }
+.hero h1 span { color: #00D9FF; }  /* Заголовок с голубым */
 .hero p { font-size: 20px; color: #ccc; max-width: 800px; margin: 0 auto 40px; }
 
 .search-container { max-width: 700px; margin: 0 auto; }
-.search-box { display: flex; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2); }
+.search-box { display: flex; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3); }
 .search-box input { flex: 1; padding: 20px; border: none; font-size: 16px; outline: none; }
-.search-box button { background: #FFD700; border: none; padding: 20px 30px; font-size: 20px; cursor: pointer; font-weight: 900; }
+.search-box button { background: #00D9FF; border: none; padding: 20px 30px; font-size: 20px; cursor: pointer; font-weight: 900; }
 .search-box button:hover { background: #fff; }
 
-.categories { background: #1a1a1a; padding: 40px 0; border-top: 2px solid #FFD700; border-bottom: 2px solid #FFD700; }
+/* Категории с голубой рамкой */
+.categories { background: #1a1f2e; padding: 40px 0; border-top: 2px solid #00D9FF; border-bottom: 2px solid #00D9FF; }
 .category-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-.category-btn { background: #000; color: #fff; border: 2px solid #FFD700; padding: 12px 28px; border-radius: 30px; cursor: pointer; font-weight: 700; font-size: 15px; transition: all 0.3s; }
-.category-btn:hover, .category-btn.active { background: #FFD700; color: #000; }
+.category-btn { background: #000; color: #fff; border: 2px solid #00D9FF; padding: 12px 28px; border-radius: 30px; cursor: pointer; font-weight: 700; font-size: 15px; transition: all 0.3s; }
+.category-btn:hover, .category-btn.active { background: #00D9FF; color: #000; }
 
 .products-section { padding: 60px 0; }
 .section-title { text-align: center; font-size: 42px; font-weight: 900; margin-bottom: 50px; }
-.section-title span { color: #FFD700; }
+.section-title span { color: #00D9FF; }
 .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-.product-card { background: #1a1a1a; border: 2px solid #333; border-radius: 12px; overflow: hidden; transition: all 0.3s; }
-.product-card:hover { border-color: #FFD700; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); }
-.product-image { height: 220px; background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); display: flex; align-items: center; justify-content: center; font-size: 80px; border-bottom: 3px solid #FFD700; }
+
+/* Карточки товаров */
+.product-card { background: #1a1f2e; border: 2px solid #333; border-radius: 12px; overflow: hidden; transition: all 0.3s; }
+.product-card:hover { border-color: #00D9FF; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3); }
+.product-image { height: 220px; background: linear-gradient(135deg, #2a2f3e 0%, #1a1f2e 100%); display: flex; align-items: center; justify-content: center; font-size: 80px; border-bottom: 3px solid #00D9FF; }
 .product-info { padding: 25px; }
-.product-category { color: #FFD700; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.product-category { color: #00D9FF; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
 .product-name { font-size: 20px; font-weight: 800; margin-bottom: 10px; color: #fff; }
 .product-code { color: #888; font-size: 14px; margin-bottom: 20px; }
-.product-btn { display: block; background: #FFD700; color: #000; text-align: center; padding: 14px; text-decoration: none; font-weight: 800; border-radius: 6px; transition: all 0.3s; }
+.product-btn { display: block; background: #00D9FF; color: #000; text-align: center; padding: 14px; text-decoration: none; font-weight: 800; border-radius: 6px; transition: all 0.3s; }
 .product-btn:hover { background: #fff; transform: scale(1.05); }
 
-.request-section { background: #FFD700; padding: 60px 0; text-align: center; }
+/* Блок запроса */
+.request-section { background: #00D9FF; padding: 60px 0; text-align: center; }
 .request-section h2 { font-size: 36px; font-weight: 900; color: #000; margin-bottom: 20px; }
 .request-section p { font-size: 18px; color: #333; max-width: 700px; margin: 0 auto 30px; }
-.request-btn { display: inline-block; background: #000; color: #FFD700; padding: 18px 40px; text-decoration: none; font-weight: 900; font-size: 18px; border-radius: 8px; transition: all 0.3s; }
+.request-btn { display: inline-block; background: #000; color: #00D9FF; padding: 18px 40px; text-decoration: none; font-weight: 900; font-size: 18px; border-radius: 8px; transition: all 0.3s; }
 .request-btn:hover { background: #fff; color: #000; transform: scale(1.05); }
 
-.footer { background: #000; padding: 40px 0; text-align: center; border-top: 3px solid #FFD700; }
+.footer { background: #000; padding: 40px 0; text-align: center; border-top: 3px solid #00D9FF; }
 .footer p { color: #888; margin-bottom: 10px; }
-.footer a { color: #FFD700; text-decoration: none; font-weight: 700; }
+.footer a { color: #00D9FF; text-decoration: none; font-weight: 700; }
 
 .empty-state { text-align: center; padding: 60px 20px; color: #888; }
-.empty-state h3 { font-size: 28px; margin-bottom: 20px; color: #FFD700; }
+.empty-state h3 { font-size: 28px; margin-bottom: 20px; color: #00D9FF; }
 
 @media (max-width: 768px) {
     .hero h1 { font-size: 36px; }
@@ -72,7 +80,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     <div class="container header-content">
         <div class="logo">
             <svg viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg">
-                <rect x="0" y="0" width="100" height="60" rx="8" fill="#FFD700"/>
+                <rect x="0" y="0" width="100" height="60" rx="8" fill="#00D9FF"/>
                 <rect x="100" y="0" width="220" height="60" rx="0" fill="#111"/>
                 <rect x="100" y="0" width="220" height="60" rx="8" fill="#111"/>
                 <text x="50" y="42" font-family="Arial Black, Arial, sans-serif" font-size="34" font-weight="900" fill="#000" text-anchor="middle">EHS</text>
@@ -90,7 +98,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
         <div class="search-container">
             <div class="search-box">
                 <input type="search" id="searchInput" placeholder="Введите артикул, название или модель техники...">
-                <button onclick="filterProducts()">🔍</button>
+                <button onclick="filterProducts()"></button>
             </div>
         </div>
     </div>
@@ -138,15 +146,15 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
 
 <script>
 const products = [
-    { id: 1, name: "Гидравлический насос HPM-4500", code: "EHS-HPM4500-2024", category: "hydraulic", icon: "️", description: "Высокопроизводительный гидронасос для карьерной техники" },
+    { id: 1, name: "Гидравлический насос HPM-4500", code: "EHS-HPM4500-2024", category: "hydraulic", icon: "⚙️", description: "Высокопроизводительный гидронасос для карьерной техники" },
     { id: 2, name: "Фильтрующий элемент FTX-880", code: "EHS-FTX880-2024", category: "filters", icon: "🔵", description: "Масляный фильтр для гидравлических систем" },
     { id: 3, name: "Клеммная колодка EB-24L", code: "EHS-EB24L-2024", category: "electrical", icon: "⚡", description: "Электрический клеммный блок для спецтехники" },
     { id: 4, name: "Поддерживающий каток IW-7600", code: "EHS-IW7600-2024", category: "undercarriage", icon: "⚙️", description: "Каток ходовой части для экскаваторов" },
     { id: 5, name: "Ведущая звёздочка DS-520", code: "EHS-DS520-2024", category: "undercarriage", icon: "⭐", description: "Звёздочка привода гусеничной ленты" },
     { id: 6, name: "Гидромотор HM-3300", code: "EHS-HM3300-2024", category: "hydraulic", icon: "⚙️", description: "Гидравлический мотор для приводов" },
-    { id: 7, name: "Воздушный фильтр AF-1200", code: "EHS-AF1200-2024", category: "filters", icon: "", description: "Фильтр воздушный для дизельных двигателей" },
+    { id: 7, name: "Воздушный фильтр AF-1200", code: "EHS-AF1200-2024", category: "filters", icon: "⚪", description: "Фильтр воздушный для дизельных двигателей" },
     { id: 8, name: "Стартер ST-5500", code: "EHS-ST5500-2024", category: "electrical", icon: "🔋", description: "Стартер для карьерных самосвалов" },
-    { id: 9, name: "Турбокомпрессор TC-8800", code: "EHS-TC8800-2024", category: "engine", icon: "🔧", description: "Турбина для двигателей спецтехники" },
+    { id: 9, name: "Турбокомпрессор TC-8800", code: "EHS-TC8800-2024", category: "engine", icon: "", description: "Турбина для двигателей спецтехники" },
     { id: 10, name: "Гидроцилиндр HC-2200", code: "EHS-HC2200-2024", category: "hydraulic", icon: "⚙️", description: "Гидроцилиндр подъёма кузова" },
     { id: 11, name: "Топливный фильтр FF-440", code: "EHS-FF440-2024", category: "filters", icon: "🔵", description: "Фильтр топливный тонкой очистки" },
     { id: 12, name: "Генератор GN-3300", code: "EHS-GN3300-2024", category: "electrical", icon: "⚡", description: "Генератор для горной техники" }
