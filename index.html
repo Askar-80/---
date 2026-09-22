@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EHS Mashinery — каталог</title>
+    <meta name="description" content="EHS Mashinery — поиск и поставка горно-шахтного оборудования, запчастей и комплектующих.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav">
+            <div class="logo"><span>EHS</span> MASHINERY</div>
+            <a class="whatsapp mini" href="https://wa.me/77750078288" target="_blank">WhatsApp</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="eyebrow">ГОРНО-ШАХТНОЕ ОБОРУДОВАНИЕ</div>
+                    <h1>НАЙДЁМ ВСЁ,<br><span>ЧТО ВАМ НУЖНО</span></h1>
+                    <p>Запчасти, оборудование и комплектующие для горной и карьерной техники. Есть артикул, модель или только фото детали — отправьте запрос, мы попробуем найти нужное решение.</p>
+                    <div class="hero-actions">
+                        <a class="btn yellow" href="#catalog">Смотреть каталог</a>
+                        <a class="btn outline" href="https://wa.me/77750078288?text=Здравствуйте!%20Хочу%20подобрать%20запчасть." target="_blank">Отправить запрос</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="search-label">ПОИСК ЗАПЧАСТИ</div>
+                    <div class="search-box">
+                        <input id="search" type="search" placeholder="Артикул, название, модель...">
+                        <button onclick="filterProducts()">⌕</button>
+                    </div>
+                    <div class="quick">Например: гидронасос · фильтр · CAT 777</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="promise">
+            <div class="container promise-grid">
+                <div><strong>01</strong><h3>Есть артикул?</h3><p>Пришлите его нам.</p></div>
+                <div><strong>02</strong><h3>Есть фото?</h3><p>Отправьте фотографию детали.</p></div>
+                <div><strong>03</strong><h3>Не знаете название?</h3><p>Опишите технику и задачу.</p></div>
+                <div><strong>04</strong><h3>Не нашли в каталоге?</h3><p>Мы всё равно попробуем найти.</p></div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog-section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow dark">КАТАЛОГ</div>
+                        <h2>Популярные категории</h2>
+                    </div>
+                    <div class="categories">
+                        <button class="cat active" data-cat="all">Все</button>
+                        <button class="cat" data-cat="Гидравлика">Гидравлика</button>
+                        <button class="cat" data-cat="Фильтры">Фильтры</button>
+                        <button class="cat" data-cat="Электрика">Электрика</button>
+                        <button class="cat" data-cat="Ходовая">Ходовая</button>
+                    </div>
+                </div>
+
+                <div id="products" class="products"></div>
+                <div id="empty" class="empty" hidden>
+                    <h3>Не нашли нужную позицию?</h3>
+                    <p>Это не значит, что мы не сможем её найти.</p>
+                    <a class="btn yellow" href="https://wa.me/77750078288?text=Здравствуйте!%20Не%20нашёл%20нужную%20позицию%20в%20каталоге.%20Помогите%20найти." target="_blank">Отправить запрос в WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="request">
+            <div class="container request-box">
+                <div>
+                    <div class="eyebrow">НЕ НАШЛИ?</div>
+                    <h2>Отправьте нам запрос</h2>
+                    <p>Фото детали, артикул, модель техники или даже ваш список закупки — мы проверим возможные варианты поставки.</p>
+                </div>
+                <a class="btn black" href="https://wa.me/77750078288?text=Здравствуйте!%20Мне%20нужно%20найти%20запчасть.%20Подскажите,%20пожалуйста." target="_blank">🟡 Запросить запчасть</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div><div class="logo"><span>EHS</span> MASHINERY</div><p>Горно-шахтное оборудование и запчасти</p></div>
+            <div><strong>WhatsApp</strong><br><a href="https://wa.me/77750078288" target="_blank">+7 (775) 007-82-88</a></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
