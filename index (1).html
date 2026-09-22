@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EHS Mashinery — каталог</title>
+<meta name="description" content="EHS Mashinery — поиск и поставка горно-шахтного оборудования, запчастей и комплектующих.">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f4f2;color:#151515}
+.container{width:min(1180px,92%);margin:auto}
+.header{background:#111;color:#fff;border-bottom:1px solid #292929}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:1.5px;font-size:20px}
+.logo span{color:#ffd400}
+.whatsapp{display:inline-block;text-decoration:none;color:#111;background:#ffd400;padding:11px 18px;border-radius:6px;font-weight:800}
+.hero{background:#111;color:#fff;padding:75px 0 90px}
+.hero-content{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2.5px;color:#ffd400;margin-bottom:16px}
+h1{font-size:clamp(42px,6vw,78px);line-height:.94;margin:0 0 25px;font-weight:950;letter-spacing:-3px}
+h1 span{color:#ffd400}
+.hero-text p{max-width:650px;color:#cfcfcf;font-size:18px;line-height:1.55}
+.hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:15px 22px;border-radius:6px;font-weight:800;border:1px solid transparent;cursor:pointer}
+.yellow{background:#ffd400;color:#111}
+.outline{border-color:#666;color:#fff}
+.hero-card{background:#1c1c1c;border:1px solid #333;border-radius:12px;padding:28px;box-shadow:0 20px 50px #0005}
+.search-label{font-size:12px;font-weight:800;letter-spacing:2px;color:#ffd400;margin-bottom:12px}
+.search-box{display:flex;background:#fff;border-radius:7px;overflow:hidden}
+.search-box input{min-width:0;flex:1;border:0;padding:17px;font-size:16px;outline:none}
+.search-box button{width:58px;border:0;background:#ffd400;font-size:28px;cursor:pointer}
+.quick{font-size:12px;color:#999;margin-top:12px}
+.promise{background:#ffd400}
+.promise-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.promise-grid>div{padding:28px 22px;border-right:1px solid #1112}
+.promise strong{font-size:13px}
+.promise p{margin:4px 0 0;color:#444}
+.catalog-section{padding:75px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:35px}
+.eyebrow.dark{color:#555}
+h2{font-size:42px;line-height:1;margin:0 0 15px}
+.categories{display:flex;gap:8px;flex-wrap:wrap}
+.cat{background:#fff;border:1px solid #ddd;padding:10px 14px;border-radius:30px;cursor:pointer}
+.cat.active,.cat:hover{background:#111;color:#fff}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{background:#fff;border:1px solid #ddd;border-radius:10px;overflow:hidden}
+.product-img{height:170px;background:linear-gradient(135deg,#222,#555);display:flex;align-items:center;justify-content:center;color:#ffd400;font-size:46px;font-weight:900}
+.product-body{padding:18px}
+.product-cat{font-size:11px;color:#777;text-transform:uppercase;letter-spacing:1px}
+.product-title{font-weight:800;font-size:18px;margin:8px 0}
+.product-code{font-size:13px;color:#777}
+.product-btn{display:block;text-align:center;background:#ffd400;color:#111;text-decoration:none;font-weight:800;padding:11px;border-radius:5px;margin-top:15px}
+.empty{text-align:center;background:#fff;border:1px solid #ddd;border-radius:12px;padding:45px 20px}
+.request{padding:0 0 75px}
+.request-box{background:#ffd400;padding:45px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.request-box p{max-width:700px;line-height:1.5}
+.black{background:#111;color:#fff}
+footer{background:#111;color:#aaa;padding:40px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:30px}
+.footer-inner a{color:#ffd400;text-decoration:none}
+.footer-inner p{margin-bottom:0}
+@media(max-width:850px){
+.hero-content{grid-template-columns:1fr}
+.products{grid-template-columns:repeat(2,1fr)}
+.promise-grid{grid-template-columns:repeat(2,1fr)}
+.section-head,.request-box,.footer-inner{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:520px){
+.products{grid-template-columns:1fr}
+.promise-grid{grid-template-columns:1fr}
+h1{letter-spacing:-1.5px}
+.hero{padding:55px 0}
+.catalog-section{padding:55px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container nav">
+<div class="logo"><span>EHS</span> MASHINERY</div>
+<a class="whatsapp" href="https://wa.me/77750078288" target="_blank">WhatsApp</a>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container hero-content">
+<div class="hero-text">
+<div class="eyebrow">ГОРНО-ШАХТНОЕ ОБОРУДОВАНИЕ</div>
+<h1>НАЙДЁМ ВСЁ,<br><span>ЧТО ВАМ НУЖНО</span></h1>
+<p>Запчасти, оборудование и комплектующие для горной и карьерной техники. Есть артикул, модель или только фото детали — отправьте запрос, мы попробуем найти нужное решение.</p>
+<div class="hero-actions">
+<a class="btn yellow" href="#catalog">Смотреть каталог</a>
+<a class="btn outline" href="https://wa.me/77750078288?text=Здравствуйте!%20Хочу%20подобрать%20запчасть." target="_blank">Отправить запрос</a>
+</div>
+</div>
+
+<div class="hero-card">
+<div class="search-label">ПОИСК ЗАПЧАСТИ</div>
+<div class="search-box">
+<input id="search" type="search" placeholder="Артикул, название, модель...">
+<button id="searchButton">⌕</button>
+</div>
+<div class="quick">Например: гидронасос · фильтр · CAT 777</div>
+</div>
+</div>
+</section>
+
+<section class="promise">
+<div class="container promise-grid">
+<div><strong>01</strong><h3>Есть артикул?</h3><p>Пришлите его нам.</p></div>
+<div><strong>02</strong><h3>Есть фото?</h3><p>Отправьте фотографию детали.</p></div>
+<div><strong>03</strong><h3>Не знаете название?</h3><p>Опишите технику и задачу.</p></div>
+<div><strong>04</strong><h3>Не нашли в каталоге?</h3><p>Мы всё равно попробуем найти.</p></div>
+</div>
+</section>
+
+<section id="catalog" class="catalog-section">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="eyebrow dark">КАТАЛОГ</div>
+<h2>Популярные категории</h2>
+</div>
+<div class="categories">
+<button class="cat active" data-cat="all">Все</button>
+<button class="cat" data-cat="Гидравлика">Гидравлика</button>
+<button class="cat" data-cat="Фильтры">Фильтры</button>
+<button class="cat" data-cat="Электрика">Электрика</button>
+<button class="cat" data-cat="Ходовая">Ходовая</button>
+</div>
+</div>
+
+<div id="products" class="products"></div>
+
+<div id="empty" class="empty" hidden>
+<h3>Не нашли нужную позицию?</h3>
+<p>Это не значит, что мы не сможем её найти.</p>
+<a class="btn yellow" href="https://wa.me/77750078288?text=Здравствуйте!%20Не%20нашёл%20нужную%20позицию%20в%20каталоге.%20Помогите%20найти." target="_blank">Отправить запрос в WhatsApp</a>
+</div>
+</div>
+</section>
+
+<section class="request">
+<div class="container request-box">
+<div>
+<div class="eyebrow" style="color:#111">НЕ НАШЛИ?</div>
+<h2>Отправьте нам запрос</h2>
+<p>Фото детали, артикул, модель техники или даже ваш список закупки — мы проверим возможные варианты поставки.</p>
+</div>
+<a class="btn black" href="https://wa.me/77750078288?text=Здравствуйте!%20Мне%20нужно%20найти%20запчасть.%20Подскажите,%20пожалуйста." target="_blank">🟡 Запросить запчасть</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-inner">
+<div>
+<div class="logo"><span>EHS</span> MASHINERY</div>
+<p>Горно-шахтное оборудование и запчасти</p>
+</div>
+<div><strong>WhatsApp</strong><br><a href="https://wa.me/77750078288" target="_blank">+7 (775) 007-82-88</a></div>
+</div>
+</footer>
+
+<script>
+const products = [
+{name:"Гидронасос",code:"EHS-DEMO-001",cat:"Гидравлика",icon:"⚙"},
+{name:"Гидроцилиндр",code:"EHS-DEMO-002",cat:"Гидравлика",icon:"🔧"},
+{name:"Фильтр масляный",code:"EHS-DEMO-003",cat:"Фильтры",icon:"◉"},
+{name:"Фильтр воздушный",code:"EHS-DEMO-004",cat:"Фильтры",icon:"◌"},
+{name:"Стартер",code:"EHS-DEMO-005",cat:"Электрика",icon:"⚡"},
+{name:"Детали ходовой",code:"EHS-DEMO-006",cat:"Ходовая",icon:"●"},
+{name:"Запчасть для спецтехники",code:"EHS-DEMO-007",cat:"Другое",icon:"◆"},
+{name:"Комплектующие",code:"EHS-DEMO-008",cat:"Другое",icon:"▣"}
+];
+
+let currentCategory="all";
+
+function renderProducts(){
+const query=document.getElementById("search").value.toLowerCase().trim();
+const filtered=products.filter(p=>{
+const categoryOk=currentCategory==="all"||p.cat===currentCategory;
+const searchOk=!query||(`${p.name} ${p.code} ${p.cat}`).toLowerCase().includes(query);
+return categoryOk&&searchOk;
+});
+
+const box=document.getElementById("products");
+const empty=document.getElementById("empty");
+
+box.innerHTML=filtered.map(p=>`
+<article class="product">
+<div class="product-img">${p.icon}</div>
+<div class="product-body">
+<div class="product-cat">${p.cat}</div>
+<div class="product-title">${p.name}</div>
+<div class="product-code">Артикул: ${p.code}</div>
+<a class="product-btn" href="https://wa.me/77750078288?text=${encodeURIComponent("Здравствуйте! Интересует позиция: "+p.name+", артикул "+p.code)}" target="_blank">Запросить цену</a>
+</div>
+</article>`).join("");
+
+empty.hidden=filtered.length!==0;
+}
+
+document.querySelectorAll(".cat").forEach(button=>{
+button.addEventListener("click",()=>{
+document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));
+button.classList.add("active");
+currentCategory=button.dataset.cat;
+renderProducts();
+});
+});
+
+document.getElementById("search").addEventListener("input",renderProducts);
+document.getElementById("searchButton").addEventListener("click",renderProducts);
+renderProducts();
+</script>
+</body>
+</html>
